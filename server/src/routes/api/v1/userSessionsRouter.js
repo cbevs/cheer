@@ -9,7 +9,6 @@ sessionRouter.post("/", (req, res, next) => {
       // eslint-disable-next-line no-console
       console.log(err);
     }
-
     if (user) {
       user.id = user.id.toString()
       return req.login(user, () => {
