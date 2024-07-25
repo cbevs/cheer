@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
-import Homepage from "./landing/Homepage";
+import SignedOutHomepage from "./landing/SignedOutHomepage";
+import SignedInHomePage from "./landing/SignedInHomePage";
+import getRandomGreeting from "../services/getRandomGreeting";
 
 import "../assets/scss/main.scss";
 
@@ -26,12 +28,15 @@ const App = (props) => {
     fetchCurrentUser();
   }, []);
 
+  const greeting = useRef(getRandomGreeting())
+
   return (
     <Router>
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <Homepage user={currentUser} />
+          { !currentUser ? <SignedOutHomepage greeting={greeting.current} /> : 
+          <SignedInHomePage user={currentUser} greeting={greeting.current} /> }
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />

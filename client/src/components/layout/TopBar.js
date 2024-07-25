@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 import SignOutButton from "../authentication/SignOutButton";
 
 const TopBar = ({ user }) => {
-  const unauthenticatedListItems = [
-    <Link to="/user-sessions/new">Sign In</Link>
-  ];
+  const unauthenticatedListItems = <Link to="/user-sessions/new">Sign In</Link>
+  
 
-  const authenticatedListItems = [
-      <SignOutButton />
-  ];
+  const authenticatedListItems = <SignOutButton />
+  
 
   return (
     <>

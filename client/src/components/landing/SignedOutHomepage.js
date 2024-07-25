@@ -2,12 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const Homepage = ({ user }) => {
+const SignedOutHomepage = ({ greeting }) => {
 
   return (
     <>
       <div className="landing-1">
-        <h1 className="landing-text">Hey there, friend!</h1>
+        <h1 className="landing-text">{greeting}! How are you?</h1>
         <a href="#l2" className="scroll-icon"><FontAwesomeIcon icon="fa-solid fa-angles-down" /></a>
       </div>
       <div className="landing-2" id="l2">
@@ -21,11 +21,11 @@ const Homepage = ({ user }) => {
         </div>
         <div className="landing-2-right">
           <h2 className="font-1 text-c landing-r-text welcome-text">Find cheer in your every day!</h2>
-          { !user ? <Link to="/users/new" className="sign-up-link">Sign Up Now!</Link> : null }
+          <Link to="/users/new" className="sign-up-link">Sign Up Now!</Link>
         </div>
       </div>
     </>
   )
 }
 
-export default Homepage
+export default SignedOutHomepage
