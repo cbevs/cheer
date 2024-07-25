@@ -225,7 +225,7 @@ html {
   padding: 1rem;
 }
 
-.sign-up-link, .register-link {
+.sign-up-link, .register-link, .sign-in-link {
   background-color: $color2;
   color: #fff;
   font-weight: 500;
@@ -234,43 +234,53 @@ html {
   margin: 4rem auto 0 auto;
 }
 
-.sign-up-link:hover, .register-link:hover {
+.sign-up-link:hover, .register-link:hover, .sign-in-link:hover {
   background-color: $color4;
   color: #fff;
   cursor: pointer;
 }
 
-.sign-up-link:focus, .register-link:focus {
+.sign-up-link:focus, .register-link:focus, .sign-in-link:focus {
   background-color: $color3;
 }
 
-.register-link {
+.register-link, .sign-in-link {
   border: none
 }
 
-.register-link:last-child {
+.register-link:last-child, .sign-in-link:last-child {
   margin-top: 1rem;
 }
 
-.reg-page {
+.reg-page, .sign-in-page {
   background: linear-gradient(110deg, #fff 50%, #FFC600 calc(50% + 1px));
   height: 100vh;
   padding: 3rem;
 }
 
-.reg-form {
+.reg-form, .sign-in-form {
   @include glass;
   width: 50%;
   text-align: center;
 }
 
-.reg-form p {
+.reg-form p, .sign-in-form p {
   text-align: left;
   font-family: $font2;
   padding-left: 1rem;
 }
 
-.reg-form input {
+.reg-form input, .sign-in-form input {
+  border-radius: 10px;
+}
+
+.form-error-1 {
+  font-weight: 600;
+  color: $color2;
+}
+
+.form-error-2 {
+  background-color: $color3;
   border-radius: 10px;
 }
 
