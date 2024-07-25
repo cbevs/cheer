@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const Homepage = () => {
+const Homepage = ({ user }) => {
 
   return (
     <>
@@ -21,7 +21,7 @@ const Homepage = () => {
         </div>
         <div className="landing-2-right">
           <h2 className="font-1 text-c landing-r-text welcome-text">Find cheer in your every day!</h2>
-          <Link to="/users/new" className="sign-up-link">Sign Up Now!</Link>
+          { !user ? <Link to="/users/new" className="sign-up-link">Sign Up Now!</Link> : null }
         </div>
       </div>
     </>

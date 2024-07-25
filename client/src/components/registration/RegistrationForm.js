@@ -54,7 +54,7 @@ const RegistrationForm = () => {
       if (passwordConfirmation !== password) {
         newErrors = {
           ...newErrors,
-          passwordConfirmation: "does not match password",
+          passwordConfirmation: "Passwords do not match!",
         };
       }
     }
