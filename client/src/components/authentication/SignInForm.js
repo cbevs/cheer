@@ -19,14 +19,14 @@ const SignInForm = () => {
     if (!email.match(emailRegexp)) {
       newErrors = {
         ...newErrors,
-        email: "is invalid",
+        email: "The email you entered is invalid!",
       };
     }
 
     if (password.trim() === "") {
       newErrors = {
         ...newErrors,
-        password: "is required",
+        password: "Password is required",
       };
     }
 
@@ -77,35 +77,38 @@ const SignInForm = () => {
   }
 
   return (
-    <div className="grid-container" onSubmit={onSubmit}>
-      <h1>Sign In</h1>
+    <div className="sign-in-page">
+      <div className="grid-container sign-in-form" onSubmit={onSubmit}>
+        <h1 className="font-1 center color-2">Sign In</h1>
 
-      {credentialsErrors ? <p className="callout alert">{credentialsErrors}</p> : null}
+        {credentialsErrors ? <p className="callout form-error-2">{credentialsErrors}</p> : null}
 
-      <form>
-        <div>
-          <label>
-            Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
-            <FormError error={errors.email} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={userPayload.password}
-              onChange={onInputChange}
-            />
-            <FormError error={errors.password} />
-          </label>
-        </div>
-        <div>
-          <input type="submit" className="button" value="Sign In" />
-        </div>
-      </form>
+        <form>
+          <div>
+            <label>
+              <p>Email</p>
+              <input type="text" name="email" value={userPayload.email} onChange={onInputChange} required />
+              <FormError error={errors.email} />
+            </label>
+          </div>
+          <div>
+            <label>
+              <p>Password</p>
+              <input
+                type="password"
+                name="password"
+                value={userPayload.password}
+                onChange={onInputChange}
+                required
+              />
+              <FormError error={errors.password} />
+            </label>
+          </div>
+          <div className="bp-2">
+            <input type="submit" className="sign-in-link" value="Sign In" />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

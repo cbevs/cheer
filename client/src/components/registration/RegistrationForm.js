@@ -38,6 +38,13 @@ const RegistrationForm = () => {
       };
     }
 
+    if (username.trim() == "") {
+      newErrors = {
+        ...newErrors,
+        username: "is required",
+      };
+    }
+
     if (passwordConfirmation.trim() === "") {
       newErrors = {
         ...newErrors,
@@ -47,7 +54,7 @@ const RegistrationForm = () => {
       if (passwordConfirmation !== password) {
         newErrors = {
           ...newErrors,
-          passwordConfirmation: "does not match password",
+          passwordConfirmation: "Passwords do not match!",
         };
       }
     }
@@ -100,52 +107,56 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className="grid-container">
-      <h1>Register</h1>
-      <ErrorList errors={serverErrors} />
-      <form onSubmit={onSubmit}>
-        <div>
-          <label>
-            Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
-            <FormError error={errors.email} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Username
-            <input type="text" name="username" value={userPayload.username} onChange={onInputChange} />
-            <FormError error={errors.username} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={userPayload.password}
-              onChange={onInputChange}
-            />
-            <FormError error={errors.password} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password Confirmation
-            <input
-              type="password"
-              name="passwordConfirmation"
-              value={userPayload.passwordConfirmation}
-              onChange={onInputChange}
-            />
-            <FormError error={errors.passwordConfirmation} />
-          </label>
-        </div>
-        <div>
-          <input type="submit" className="button" value="Register" />
-        </div>
-      </form>
+    <div className="reg-page">
+      <div className="grid-container reg-form">
+        <h1 className="font-1 center color-2">Register</h1>
+        <ErrorList errors={serverErrors} />
+        <form onSubmit={onSubmit}>
+          <div>
+            <label>
+              <p>Email</p>
+              <input type="text" name="email" value={userPayload.email} onChange={onInputChange} required />
+              <FormError error={errors.email} />
+            </label>
+          </div>
+          <div>
+            <label>
+              <p>Username</p>
+              <input type="text" name="username" value={userPayload.username} onChange={onInputChange} required/>
+              <FormError error={errors.username} />
+            </label>
+          </div>
+          <div>
+            <label>
+              <p>Password</p>
+              <input
+                type="password"
+                name="password"
+                value={userPayload.password}
+                onChange={onInputChange}
+                required
+              />
+              <FormError error={errors.password} />
+            </label>
+          </div>
+          <div>
+            <label>
+              <p>Password Confirmation</p>
+              <input
+                type="password"
+                name="passwordConfirmation"
+                value={userPayload.passwordConfirmation}
+                onChange={onInputChange}
+                required
+              />
+              <FormError error={errors.passwordConfirmation} />
+            </label>
+          </div>
+          <div className="bp-2">
+            <input type="submit" className="register-link" value="Register" />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
