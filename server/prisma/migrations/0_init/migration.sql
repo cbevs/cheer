@@ -11,9 +11,26 @@ CREATE TABLE "users" (
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "checkins" (
+    "id" SERIAL NOT NULL,
+    "notes" TEXT NOT NULL,
+    "date" TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP,
+    "userid" BIGINT,
+    "moods" TEXT,
+
+    CONSTRAINT "checkins_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_unique" ON "users"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_username_key" ON "users"("username");
+
+-- CreateIndex
+CREATE INDEX "checkins_userid" ON "checkins"("userid");
+
+-- AddForeignKey
+ALTER TABLE "checkins" ADD CONSTRAINT "fk_user" FOREIGN KEY ("userid") REFERENCES "users"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 

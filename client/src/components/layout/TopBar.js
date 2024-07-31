@@ -6,9 +6,16 @@ import SignOutButton from "../authentication/SignOutButton";
 const TopBar = ({ user }) => {
   const unauthenticatedListItems = <Link to="/user-sessions/new">Sign In</Link>
   
-
-  const authenticatedListItems = <SignOutButton />
+  let authenticatedListItems
   
+  if (user) {
+    authenticatedListItems = (
+      <>
+      <Link to={`/profile/${user.id}`} className="rm-1">Profile</Link>
+      <SignOutButton />
+      </>
+    )
+  }
 
   return (
     <>

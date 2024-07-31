@@ -5,11 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 // place global css here
 
-@mixin gradientText {
-  background-clip: text;
-  color: transparent;
-}
-
 @mixin button {
   padding: 15px;
   border-radius: 10px;
@@ -49,6 +44,10 @@ html {
   height: 100%;
 }
 
+body {
+  background-image: url("https://cheer-production.s3.us-east-2.amazonaws.com/cheerBG.png");
+}
+
 .font-1 {
   font-family: $font1;
 }
@@ -75,6 +74,10 @@ html {
 
 .bp-2 {
   padding-bottom: 2rem;
+}
+
+.rm-1 {
+  margin-right: 1rem;
 }
 
 .nav-left {
@@ -105,7 +108,7 @@ html {
 }
 
 .nav-bar a:hover, .sign-out-btn:hover {
-  color: $color1;
+  color: $color4;
   transition: $tran2;
 }
 
@@ -142,12 +145,10 @@ html {
   justify-content: center;
   align-items: center;
   height: 500px;
-  background: linear-gradient(110deg, #fff 50%, #FFC600 calc(50% + 1px));
 }
 
 .landing-2 {
   height: 500px;
-  background: linear-gradient(70deg, #fff 50%, #FFC600 calc(50% + 1px));
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -155,8 +156,7 @@ html {
 }
 
 .landing-text {
-  background: linear-gradient(110deg, #FFC600 50%, #fff 51%);
-  @include gradientText;
+  color: $color1;
   font-family: $font1;
   padding: 1rem;
 }
@@ -225,27 +225,25 @@ html {
   padding: 1rem;
 }
 
-.sign-up-link, .register-link, .sign-in-link {
-  background-color: $color2;
-  color: #fff;
+.sign-up-link, .register-link, .sign-in-link, .link {
+  border: 1px solid $color2;
+  color: $color2;
   font-weight: 500;
   @include button;
   width: 150px;
   margin: 4rem auto 0 auto;
+  transition: $tran2;
 }
 
-.sign-up-link:hover, .register-link:hover, .sign-in-link:hover {
-  background-color: $color4;
-  color: #fff;
+.sign-up-link:hover, .register-link:hover, .sign-in-link:hover, .link:hover, .submit-button:hover {
+  color: $color4;
+  border: 1px solid $color4;
   cursor: pointer;
+  transition: $tran2;
 }
 
-.sign-up-link:focus, .register-link:focus, .sign-in-link:focus {
+.sign-up-link:focus, .register-link:focus, .sign-in-link:focus, .link:focus, .submit-button:focus {
   background-color: $color3;
-}
-
-.register-link, .sign-in-link {
-  border: none
 }
 
 .register-link:last-child, .sign-in-link:last-child {
@@ -253,7 +251,6 @@ html {
 }
 
 .reg-page, .sign-in-page {
-  background: linear-gradient(110deg, #fff 50%, #FFC600 calc(50% + 1px));
   height: 100vh;
   padding: 3rem;
 }
@@ -282,6 +279,181 @@ html {
 .form-error-2 {
   background-color: $color3;
   border-radius: 10px;
+}
+
+.user-page {
+  flex-direction: column;
+}
+
+.checked-in-block {
+  display: flex;
+  align-items: center;
+}
+
+.checked-in-link {
+  border: 1px solid $color2;
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: $color2;
+  font-family: $font2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: $tran2;
+  margin-top: 1rem;
+}
+
+.checked-in-link:focus {
+  color: $color2;
+}
+
+.checked-in-link:hover {
+  border: 1px solid $color4;
+  border-radius: 10px;
+  transition: $tran2;
+  color: $color4;
+  cursor: hover;
+}
+
+.checkin-block {
+  display: flex;
+  align-items: center;
+}
+
+.checkin-block:hover > .checkin-icon {
+  background-color: $color4;
+  cursor: pointer;
+  transition: $tran1;
+}
+
+.checkin-block:hover > .checkin-link {
+  color: $color4;
+  cursor: pointer;
+  transition: $tran2;
+}
+
+.checkin-icon {
+  margin-right: 1rem;
+  padding: 1rem;
+  color: #fff;
+  background-color: $color2;
+  border-radius: 50%;
+  transition: $tran1
+}
+
+.checkin-icon:focus {
+  background-color: $color3;
+  transition: $tran1;
+}
+
+.checked-in-icon {
+  margin-right: 1rem;
+  padding: 1rem;
+  color: #fff;
+  background-color: $color2;
+  border-radius: 50%;
+}
+
+.checkin-link {
+  color: $color2;
+  font-family: $font2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: $tran2;
+  margin: 0;
+}
+
+.checkin-link:focus {
+  color: $color3;
+  transition: $tran2;
+}
+
+.checkin-f {
+  flex-direction: column;
+}
+
+.checkin-text {
+  color: $color1;
+  font-family: $font1;
+  padding: 1rem;
+}
+
+.checkin-form {
+  @include glass;
+  height: 90%;
+  width: 30%;
+  overflow: auto;
+}
+
+.checkin-form {
+  font-family: $font2;
+}
+
+.checkin-form p {
+  margin-top: 1rem;
+}
+
+.checkin-form input {
+  border-radius: 10px;
+}
+
+.submit-button {
+  background-color: $color2;
+  color: #fff;
+  font-weight: 500;
+  @include button;
+  width: 150px;
+  margin: 4rem auto 0 auto;
+}
+
+.mood-button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  transition: $tran1;
+}
+
+.mood-button:hover {
+  cursor: pointer;
+}
+
+.happy-button {
+  background-color: $color1;
+}
+
+.happy-button:hover {
+  background-color: #ffe480;
+  transition: $tran1;
+}
+
+.neutral-button {
+  background-color: $color4;
+}
+
+.neutral-button:hover {
+  background-color: #7fc2fd;
+  transition: $tran1;
+}
+
+.sad-button {
+  background-color: $color2;
+}
+
+.sad-button:hover {
+  background-color: #5675fe;
+  transition: $tran1;
+}
+
+.moods-div {
+  text-align: center;
+}
+
+.selected-mood-button {
+  background-color: $color3;
+  color: #000;
+  transition: $tran1;
 }
 
 @media screen and (max-width: 1024px) {

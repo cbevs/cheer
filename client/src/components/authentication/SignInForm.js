@@ -87,7 +87,7 @@ const SignInForm = () => {
           <div>
             <label>
               <p>Email</p>
-              <input type="text" name="email" value={userPayload.email} onChange={onInputChange} required />
+              <input type="text" name="email" value={userPayload.email} onChange={onInputChange} required autoComplete="email" />
               <FormError error={errors.email} />
             </label>
           </div>
@@ -100,6 +100,7 @@ const SignInForm = () => {
                 value={userPayload.password}
                 onChange={onInputChange}
                 required
+                autoComplete="current-password"
               />
               <FormError error={errors.password} />
             </label>
