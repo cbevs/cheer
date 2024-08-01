@@ -187,7 +187,7 @@ body {
 }
 
 .scroll-icon:focus-visible {
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 10px;
 }
 
@@ -226,7 +226,7 @@ body {
 }
 
 .sign-up-link, .register-link, .sign-in-link, .link {
-  border: 1px solid $color2;
+  border: 2px solid $color2;
   color: $color2;
   font-weight: 500;
   @include button;
@@ -237,7 +237,7 @@ body {
 
 .sign-up-link:hover, .register-link:hover, .sign-in-link:hover, .link:hover, .submit-button:hover {
   color: $color4;
-  border: 1px solid $color4;
+  border: 2px solid $color4;
   cursor: pointer;
   transition: $tran2;
 }
@@ -291,7 +291,7 @@ body {
 }
 
 .checked-in-link {
-  border: 1px solid $color2;
+  border: 2px solid $color2;
   border-radius: 10px;
   padding: 0.5rem;
   color: $color2;
@@ -307,7 +307,7 @@ body {
 }
 
 .checked-in-link:hover {
-  border: 1px solid $color4;
+  border: 2px solid $color4;
   border-radius: 10px;
   transition: $tran2;
   color: $color4;
@@ -428,6 +428,11 @@ body {
   transition: $tran1;
 }
 
+.happy {
+  color: $color1;
+  margin-left: 1rem;
+}
+
 .neutral-button {
   background-color: $color4;
 }
@@ -435,6 +440,11 @@ body {
 .neutral-button:hover {
   background-color: #7fc2fd;
   transition: $tran1;
+}
+
+.neutral {
+  color: $color4;
+  margin-left: 1rem;
 }
 
 .sad-button {
@@ -446,6 +456,11 @@ body {
   transition: $tran1;
 }
 
+.sad {
+  color: $color2;
+  margin-left: 1rem;
+}
+
 .moods-div {
   text-align: center;
 }
@@ -454,6 +469,33 @@ body {
   background-color: $color3;
   color: #000;
   transition: $tran1;
+}
+
+.checkin-display {
+  background-color: #fff;
+}
+
+.checkin-data {
+  list-style-type: none;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+.cd-happy {
+  border-left: 5px solid $color1;
+}
+
+.cd-neutral {
+  border-left: 5px solid $color4;
+}
+
+.cd-meh {
+  border-left: 5px solid $color2;
+}
+
+.ind-checkin-text {
+  font-size: 1.1rem;
 }
 
 @media screen and (max-width: 1024px) {

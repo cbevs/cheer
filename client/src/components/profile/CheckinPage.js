@@ -7,7 +7,7 @@ const CheckInPage = ({ user }) => {
   const { id } = useParams()
   const [foundUser, setFoundUser] = useState({})
 
-  const fetchUser = async (user) => {
+  const fetchUser = async () => {
       try {
         const response = await fetch(`/api/v1/users/profile/${id}/checkin`)
         if(!response.ok) {
@@ -50,8 +50,6 @@ const CheckInPage = ({ user }) => {
       </>
     )
   }
-
-  
 
   return (
     <>
