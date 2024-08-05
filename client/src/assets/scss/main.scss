@@ -203,11 +203,6 @@ body {
   }
 }
 
-.landing-2-left, .landing-2-right {
-  height: 100%;
-  width: 50%;
-}
-
 .landing-2-left { 
   @include glass;
   height: 90%;
@@ -473,6 +468,7 @@ body {
 
 .checkin-display {
   background-color: #fff;
+  overflow: auto;
 }
 
 .checkin-data {
@@ -490,12 +486,75 @@ body {
   border-left: 5px solid $color4;
 }
 
-.cd-meh {
+.cd-sad {
   border-left: 5px solid $color2;
 }
 
 .ind-checkin-text {
   font-size: 1.1rem;
+  font-family: $font2;
+}
+
+.dot {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.happy {
+  fill: $color1;
+}
+
+.neutral {
+  fill: $color4;
+}
+
+.sad {
+  fill: $color2;
+}
+
+.x-axis, .y-axis {
+  font-size: 14px;
+  font-family: $font2;
+}
+
+.x-axis path,
+.x-axis line,
+.y-axis path,
+.y-axis line {
+  display: none;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 8px;
+  font-family: $font2;
+  font-size: 12px;
+  color: #000;
+  background: lightgray;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.chart-text {
+  font-size: 1.5rem;
+  font-family: $font2;
+}
+
+.chart-svg {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.chart-bg {
+  text-align: center;
+  overflow-x: auto;
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 1024px) {

@@ -5,7 +5,6 @@ const CheckinTile = ({ checkin }) => {
   let data
   const date = (new Date(checkin.date)).toLocaleDateString("en-US")
   
-  console.log(checkin)
   if (checkin.moods === "happy") {
     data = (
       <li className="checkin-data cd-happy">

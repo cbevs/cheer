@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import CheckinTile from "../checkin/CheckinTile.js"
+import MoodChart from "./MoodChart.js"
 
 const ProfilePage = ({ user, greeting }) => {
   const { id } = useParams()
@@ -30,7 +31,7 @@ const ProfilePage = ({ user, greeting }) => {
   const checkinDisplay = checkins.map((checkin) => {
     return <CheckinTile checkin={checkin} key={checkin.id} />
   })
-
+ 
   if (user.id === id) {
     userPage = (
       <>
@@ -46,6 +47,7 @@ const ProfilePage = ({ user, greeting }) => {
           <div className="landing-2-right checkin-display">
             {checkinDisplay}
           </div>
+          <MoodChart checkins={checkins} />
         </div>
       </>
     )
