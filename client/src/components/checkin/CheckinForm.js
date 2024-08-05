@@ -34,7 +34,6 @@ const CheckinForm = () => {
         if (!response.ok) {
           if (response.status === 422) {
             const body = await response.json()
-            console.log(body)
             setErrors({
               errors: body.errors,
             })

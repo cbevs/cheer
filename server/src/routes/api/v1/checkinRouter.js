@@ -1,8 +1,21 @@
 import express from "express"
 import addPost from "../../../db/userActions/addPost.js"
 import getExistingPost from "../../../db/userActions/getExistingPost.js"
+import getUsersPosts from "../../../db/userActions/getUsersPosts.js"
+import CheckinSerializer from "../../../serializers/CheckinSerializer.js"
 
 const checkinRouter = new express.Router()
+
+checkinRouter.get("/:id", async (req, res) => {
+  const id = req.params.id
+  try {
+    const posts = await getUsersPosts(id)
+    const serializedPosts = CheckinSerializer.convertBigInt(posts)
+    return res.status(200).json({ posts: serializedPosts})
+  } catch (error) {
+    return res.status(500).json({ errors: error })
+  }
+})
 
 checkinRouter.post("/:id", async (req, res) => {
   const id = req.params.id

@@ -80,6 +80,15 @@ body {
   margin-right: 1rem;
 }
 
+.pd-1 {
+  padding: 1rem;
+}
+
+.none {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-left {
   text-align: left;
   padding-left: 4rem;
@@ -187,7 +196,7 @@ body {
 }
 
 .scroll-icon:focus-visible {
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 10px;
 }
 
@@ -201,11 +210,6 @@ body {
   100% {
     transform: scale(0.95);
   }
-}
-
-.landing-2-left, .landing-2-right {
-  height: 100%;
-  width: 50%;
 }
 
 .landing-2-left { 
@@ -226,7 +230,7 @@ body {
 }
 
 .sign-up-link, .register-link, .sign-in-link, .link {
-  border: 1px solid $color2;
+  border: 2px solid $color2;
   color: $color2;
   font-weight: 500;
   @include button;
@@ -237,7 +241,7 @@ body {
 
 .sign-up-link:hover, .register-link:hover, .sign-in-link:hover, .link:hover, .submit-button:hover {
   color: $color4;
-  border: 1px solid $color4;
+  border: 2px solid $color4;
   cursor: pointer;
   transition: $tran2;
 }
@@ -291,7 +295,7 @@ body {
 }
 
 .checked-in-link {
-  border: 1px solid $color2;
+  border: 2px solid $color2;
   border-radius: 10px;
   padding: 0.5rem;
   color: $color2;
@@ -307,7 +311,7 @@ body {
 }
 
 .checked-in-link:hover {
-  border: 1px solid $color4;
+  border: 2px solid $color4;
   border-radius: 10px;
   transition: $tran2;
   color: $color4;
@@ -428,6 +432,11 @@ body {
   transition: $tran1;
 }
 
+.happy {
+  color: $color1;
+  margin-left: 1rem;
+}
+
 .neutral-button {
   background-color: $color4;
 }
@@ -435,6 +444,11 @@ body {
 .neutral-button:hover {
   background-color: #7fc2fd;
   transition: $tran1;
+}
+
+.neutral {
+  color: $color4;
+  margin-left: 1rem;
 }
 
 .sad-button {
@@ -446,6 +460,11 @@ body {
   transition: $tran1;
 }
 
+.sad {
+  color: $color2;
+  margin-left: 1rem;
+}
+
 .moods-div {
   text-align: center;
 }
@@ -454,6 +473,107 @@ body {
   background-color: $color3;
   color: #000;
   transition: $tran1;
+}
+
+.checkin-display {
+  background-color: #fff;
+  overflow: auto;
+}
+
+.checkin-data {
+  list-style-type: none;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+.cd-happy {
+  border-left: 5px solid $color1;
+}
+
+.cd-neutral {
+  border-left: 5px solid $color4;
+}
+
+.cd-sad {
+  border-left: 5px solid $color2;
+}
+
+.ind-checkin-text {
+  font-size: 1.1rem;
+  font-family: $font2;
+}
+
+.dot {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.happy {
+  fill: $color1;
+}
+
+.neutral {
+  fill: $color4;
+}
+
+.sad {
+  fill: $color2;
+}
+
+.x-axis, .y-axis {
+  font-size: 14px;
+  font-family: $font2;
+}
+
+.x-axis path,
+.x-axis line,
+.y-axis path,
+.y-axis line {
+  display: none;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 8px;
+  font-family: $font2;
+  font-size: 12px;
+  color: #000;
+  background: lightgray;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.chart-text {
+  font-size: 1.5rem;
+  font-family: $font2;
+}
+
+.chart-svg {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.chart-bg {
+  text-align: center;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.checkin-stats-container {
+  background-color: #fff;
+  font-family: $font2;
+  padding: 1rem;
+}
+
+.checkin-stats-list-text {
+  display: inline;
 }
 
 @media screen and (max-width: 1024px) {
