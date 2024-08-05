@@ -19,8 +19,6 @@ const MoodChart = ({ checkins }) => {
         return { mood: _.capitalize(element.moods), date: newDate }
     })
 
-    console.log(data)
-
     const parseDate = d3.timeParse("%Y-%m-%d")
     const formatDate = d3.timeFormat("%b %d")
     data.forEach((d) => (d.date = parseDate(d.date)))

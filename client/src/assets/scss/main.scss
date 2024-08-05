@@ -80,6 +80,15 @@ body {
   margin-right: 1rem;
 }
 
+.pd-1 {
+  padding: 1rem;
+}
+
+.none {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-left {
   text-align: left;
   padding-left: 4rem;
@@ -555,6 +564,16 @@ body {
   text-align: center;
   overflow-x: auto;
   padding-bottom: 2rem;
+}
+
+.checkin-stats-container {
+  background-color: #fff;
+  font-family: $font2;
+  padding: 1rem;
+}
+
+.checkin-stats-list-text {
+  display: inline;
 }
 
 @media screen and (max-width: 1024px) {
