@@ -31,7 +31,7 @@ const CheckInPage = ({ user }) => {
     userPage = (
       <>
         <div className="landing-1 checkin-f">
-          <h1 className="checkin-text">How are you today, {user.username}?</h1>
+          <p className="checkin-text">How are you today, {user.username}?</p>
           <CheckinForm />
         </div>
           <div className="landing-2">

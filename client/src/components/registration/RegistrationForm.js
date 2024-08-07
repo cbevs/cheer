@@ -109,7 +109,7 @@ const RegistrationForm = () => {
   return (
     <div className="reg-page">
       <div className="grid-container reg-form">
-        <h1 className="font-1 center color-2">Register</h1>
+        <h1 className="landing-text font-1">Register</h1>
         <ErrorList errors={serverErrors} />
         <form onSubmit={onSubmit}>
           <div>
