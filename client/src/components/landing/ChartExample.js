@@ -1,29 +1,24 @@
 import React, { useRef, useEffect } from "react"
 import * as d3 from "d3"
-import _ from "lodash"
 
-const MoodChart = ({ checkins }) => {
+const ChartExample = () => {
   const svgRef = useRef(null)
 
   const generateChart = () => {
 
-    let reversedData = checkins.toReversed()
-    if (reversedData.length > 30) {
-      reversedData = reversedData.slice(0, 30)
-    }
-
-    const data = reversedData.map((element) => {
-        const date = new Date(element.date).toLocaleDateString("en-US")
-        const dateSplit = date.split("/")
-        const newDate = dateSplit[2].concat("-").concat(dateSplit[0]).concat("-").concat(dateSplit[1])
-        return { mood: _.capitalize(element.moods), date: newDate }
-    })
+    const data = [
+      { mood: "Happy", date: "2024-07-01" },
+      { mood: "Neutral", date: "2024-07-02" },
+      { mood: "Neutral", date: "2024-07-03" },
+      { mood: "Sad", date: "2024-07-04" },
+      { mood: "Neutral", date: "2024-07-05" }
+    ]
 
     const parseDate = d3.timeParse("%Y-%m-%d")
     const formatDate = d3.timeFormat("%b %d")
     data.forEach((d) => (d.date = parseDate(d.date)))
 
-    const svgWidth = 1000
+    const svgWidth = 350
     const svgHeight = 200
     const margin = { top: 20, right: 30, bottom: 40, left: 100 }
     const width = svgWidth - margin.left - margin.right
@@ -68,7 +63,7 @@ const MoodChart = ({ checkins }) => {
         tooltip.transition().duration(200).style("opacity", 0.9)
         tooltip
           .html(`Date: ${formatDate(d.date)}<br>Mood: ${d.mood}`)
-          .style("left", event.pageX - 100 + "px")
+          .style("left", event.pageX + 5 + "px")
           .style("top", event.pageY - 28 + "px")
       })
       .on("mouseout", () => {
@@ -98,13 +93,13 @@ const MoodChart = ({ checkins }) => {
 
   useEffect(() => {
     generateChart()
-  }, [checkins])
+  }, [])
 
   return (
     <div className="chart-bg">
-      <svg className="chart-svg" ref={svgRef}></svg>
+      <svg className="chart-example-svg" ref={svgRef}></svg>
     </div>
   )
 }
 
-export default MoodChart
+export default ChartExample

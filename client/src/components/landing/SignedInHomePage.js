@@ -30,12 +30,15 @@ const SignedInHomePage = ({ user, greeting }) => {
 
   if (!todaysPost) {
     checkinPane = (
+      <div className="checked-in-block">
         <Link to={`/profile/${user.id}/checkin`}>
           <div className="checkin-block">
           <FontAwesomeIcon icon="fa-solid fa-seedling" className="checkin-icon" />
           <p className="checkin-link">Check In</p>
           </div>
         </Link>
+        <Link to={`/profile/${user.id}`}  className="checked-in-link">View your profile</Link>
+      </div>
     )
   } else {
     checkinPane = (
@@ -51,7 +54,7 @@ const SignedInHomePage = ({ user, greeting }) => {
   return (
     <>
       <div className="landing-1 user-page">
-        <h1 className="landing-text">{greeting}, {user.username}!</h1>
+        <p className="landing-text">{greeting}, {user.username}!</p>
         {checkinPane}
       </div>
       <div className="landing-2" id="l2">

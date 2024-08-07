@@ -41,7 +41,7 @@ const ProfilePage = ({ user, greeting }) => {
             {greeting} {user.username}!
           </h1>
         </div>
-        <div className="landing-2" id="l2">
+        <div className="landing-2 mb-chart" id="l2">
           <div className="landing-2-left checkin-stats-container">
             <CheckinStats checkins={checkins} />
           </div>
@@ -51,7 +51,10 @@ const ProfilePage = ({ user, greeting }) => {
               {checkinDisplay}
             </ul>
           </div>
-          <MoodChart checkins={checkins} />
+        </div>
+        <div>
+        <MoodChart checkins={checkins} />
+        <p className="mobile-tip">Hint: the chart scrolls horizontally!</p>
         </div>
       </>
     )
