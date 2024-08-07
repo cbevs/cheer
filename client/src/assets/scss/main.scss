@@ -599,7 +599,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 1428px) {
+@media screen and (max-width: 1440px) {
   .checked-in-block {
     @include glass();
   }
@@ -630,6 +630,8 @@ body {
   }
   .mobile-tip {
     display: block;
+    @include glass();
+    color: #000;
   }
   .checkin-form {
     width: 100%;

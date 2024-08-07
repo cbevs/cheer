@@ -45,8 +45,8 @@ const SignedInHomePage = ({ user, greeting }) => {
       <>
         <div className="checked-in-block">
           <p className="checkin-link">Thanks for checking in today!</p>
+          <Link to={`/profile/${user.id}`}  className="checked-in-link">View your profile</Link>
         </div>
-        <Link to={`/profile/${user.id}`}  className="checked-in-link">View your profile</Link>
       </>
     )
   }
