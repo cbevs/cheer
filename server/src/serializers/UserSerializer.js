@@ -3,7 +3,7 @@ import CheckinSerializer from "./CheckinSerializer.js"
 class UserSerializer {
 
   static getUserWithCheckins(user) {
-    const allowedUserAttributes = ["id", "username", "profileImageUrl"]
+    const allowedUserAttributes = ["id", "username"]
     const serializedUser = {}
 
     for (const attribute of allowedUserAttributes) {
@@ -20,7 +20,7 @@ class UserSerializer {
   }
 
   static getUserDetails(user) {
-    const allowedUserAttributes = ["id", "username", "profileImageUrl"]
+    const allowedUserAttributes = ["id", "username"]
     const serializedUser = {}
 
     for (const attribute of allowedUserAttributes) {
