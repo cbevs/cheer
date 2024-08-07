@@ -14,6 +14,7 @@
 
    ```env
    SESSION_SECRET="ff521741-6d5a-48d2-96a9-b95bbcf60bc4"
+   DATABASE_URL="postgres://postgres:postgres@localhost:5432/cheer_development"
    ```
 
 3. Create your base PostgreSQL database. Check the `server/src/config/getDatabaseUrl` file for the name of the `development` database. For example:
