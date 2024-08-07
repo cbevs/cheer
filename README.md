@@ -22,11 +22,11 @@
    createdb cheer_development
    ```
 
-4. Run the included `users` table migration:
+4. Run the following commands from the server folder:
 
    ```sh
-   cd server
-   yarn migrate:latest
+   npx prisma db pull
+   npx prisma generate
    ```
 
 5. Start up the application, from the root folder:
